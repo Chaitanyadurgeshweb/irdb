@@ -1,0 +1,5 @@
+Fix 3: the Vercel error was in app/locomotives/[slug]/page.tsx (not app/locos/[number]/page.tsx).
+- That file still had the old `na` helper returning {} -> now returns ReactNode (same as the locos page).
+- specs values and c.history now go through na() so they can't hit the same type error.
+- package.json: next 14.2.15 -> 14.2.35 (security patch, same 14.x line).
+Verified: `next build` completes locally (types + lint + page generation).
